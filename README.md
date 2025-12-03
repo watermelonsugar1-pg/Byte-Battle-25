@@ -1,3 +1,2 @@
-# We are grade 8 students.
-# Buhaha
-## Iven is really cool
+# Team Heckers
+This is a GitHub repository containing files for the Byte Battle Hackathon 2025!
