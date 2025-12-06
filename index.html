@@ -1,71 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ASTD</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anti-Scam Hero Awareness</title>
+  <style>
+    /* GENERAL STYLES */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000; /* black background */
+      color: #f3f3f3;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111; /* dark header */
+      border-bottom: 2px solid #ff3561;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 3rem; /* bigger heading */
+      margin: 0;
+      color: #ff3561;
+    }
+
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #ddd;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ff3561;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: #111; /* black sections */
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,53,97,0.5);
+    }
+
+    h2, h3 {
+      margin-top: 0;
+      color: #ff3561;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      background: #ff3561;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 12px;
+      opacity: 0.8;
+      background: #111;
+      border-top: 2px solid #ff3561;
+    }
+
+    /* HERO IMAGE */
+    .hero {
+      max-width: 1100px;
+      margin: 20px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      background: #111;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-image {
+      background-image: url("C:/Users/anilk/Downloads/Screenshots/Screenshot 2025-12-06 203522.png");
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.5);
+      height: 320px;
+      border-radius: 15px;
+    }
+
+    .hero-text {
+      padding: 20px;
+    }
+
+    /* GAME STYLES */
+    #game-container {
+      max-width: 400px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    #game-box {
+      width: 100%;
+      height: 350px;
+      background: #000;
+      border: 3px solid #ff3561;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bot {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    .scam { background: #ff3561; }
+    .good { background: #4caf50; }
+
+    #score, #timer, #level { font-size: 18px; margin: 5px 0; }
+    #restartBtn { margin-top: 10px; }
+
+    @media (max-width: 480px) {
+      .bot { width: 35px; height: 35px; }
+      #game-box { height: 300px; }
+      header h1 { font-size: 2rem; }
+    }
+  </style>
 </head>
-
-<style>
- font-family: Arial, sans-serif;
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #121212;
-  color: #f5f5f5;
-}
-
-header {
-  padding: 60px 20px;
-  text-align: center;
-  background: linear-gradient(135deg,#3a1c71,#d76d77,#ffaf7b);
-}
-
-.section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-h1, h2 { margin: 0 0 15px; }
-
-.section h2 { color: #ffaf7b; }
-</style>
-
 <body>
 
-<audio id="bgm" autoplay loop>
-  <source src="C:\Users\prana_ingi\Desktop\Byte-Battle-25\Sweet(chosic.com).mp3" type="audio/mpeg">
-</audio>
+  <!-- HEADER -->
+  <header>
+    <h1> Anti-Scam Hero</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#game">Game</a>
+      <a href="#info">Info</a>
+    </nav>
+  </header>
 
-<script>
-// 🔊 browsers block autoplay, so enable on first click
-document.addEventListener("click", () => {
-  const bgm = document.getElementById("bgm");
-  if (bgm.paused) bgm.play();
-});
-</script>
-<!-- end audio -->
+  <!-- HOME PAGE -->
+  <section id="home">
+    <div class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-text">
+        <h2>A Tiny Hero AI vs Corrupted Scam-Bots</h2>
+        <p>Follow a brave little AI as it rescues people from scam calls and messages and converts corrupted bots into guardians.</p>
+        <a class="btn" href="#game">Play the Game</a>
+      </div>
+    </div>
 
-<header>
-  <h1>ASTD</h1>
-  <p>The GOAT of all AI games</p>
-</header>
+    <section id="story">
+      <h2>The Story</h2>
+      <p>In a neon digital city, corrupted scam-bots attempt to trick people using fake messages, cloned numbers, and panic tactics.</p>
+      <p>Our hero AI fights through their traps, exposes the humans behind them, and reprograms every bad bot into a friendly warning system.</p>
+    </section>
+  </section>
 
-<div class="section">
-  <h2>About the Game</h2>
-  <p>A tiny hero AI battles corrupted scam-bots in a neon digital city, rescuing people from fake calls and messages. In the final boss fight, the hero shatters the giant Corrupted AI, exposes the humans running the scams on every screen, and reprograms all the bad bots into friendly guardians that warn everyone about future scams.</p>
-</div>
-<div class="section">
-  <h2>Spoilers</h2>
+  <!-- GAME PAGE -->
+  <section id="game">
+    <h2>Very Simple Mini-Game: Scam-Bot Defense</h2>
+    <p>Tap the <strong>red scam-bots</strong> to destroy them! Avoid green good-bots. Level up as bots get faster!</p>
 
-  <div class="Spoilers">
-    <img src="Gemini_Generated_Image_8k4lw68k4lw68k4l.webp">
-    <p>This is the bad AI robot boss</p>
-    <img src="content.webp">
-    <p>This is the good AI robot that fights the bad AI robots</p>
-  </div>
-</div>
+    <div id="game-container">
+      <div id="game-box"></div>
+      <p id="score">Score: 0</p>
+      <p id="timer">Time Left: 30</p>
+      <p id="level">Level: 1</p>
+      <button id="restartBtn" class="btn">Restart Game</button>
+    </div>
+
+    <audio id="hitSound" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg"></audio>
+    <audio id="badSound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+
+    <script>
+      const gameBox = document.getElementById('game-box');
+      const scoreDisplay = document.getElementById('score');
+      const timerDisplay = document.getElementById('timer');
+      const levelDisplay = document.getElementById('level');
+      const restartBtn = document.getElementById('restartBtn');
+      const hitSound = document.getElementById('hitSound');
+      const badSound = document.getElementById('badSound');
+
+      let score, timeLeft, level, speed;
+      let botSpawner, countdown;
+
+      function spawnBot() {
+        const bot = document.createElement('div');
+        const isScam = Math.random() < 0.65 - (level * 0.05);
+
+        bot.classList.add('bot', isScam ? 'scam' : 'good');
+        bot.style.top = Math.random() * (gameBox.clientHeight - 45) + 'px';
+        bot.style.left = Math.random() * (gameBox.clientWidth - 45) + 'px';
+
+        bot.addEventListener('click', () => {
+          if (bot.classList.contains('scam')) {
+            score++;
+            hitSound.play();
+          } else {
+            score--;
+            badSound.play();
+          }
+          scoreDisplay.textContent = `Score: ${score}`;
+          bot.remove();
+        });
+
+        gameBox.appendChild(bot);
+        setTimeout(() => bot.remove(), speed);
+      }
+
+      function startGame() {
+        score = 0;
+        timeLeft = 30;
+        level = 1;
+        speed = 900;
+
+        scoreDisplay.textContent = `Score: ${score}`;
+        timerDisplay.textContent = `Time Left: ${timeLeft}`;
+        levelDisplay.textContent = `Level: ${level}`;
+
+        gameBox.innerHTML = '';
+
+        botSpawner = setInterval(spawnBot, speed);
+
+        countdown = setInterval(() => {
+          timeLeft--;
+          timerDisplay.textContent = `Time Left: ${timeLeft}`;
+
+          if (timeLeft % 10 === 0 && timeLeft > 0) {
+            level++;
+            levelDisplay.textContent = `Level: ${level}`;
+            speed = Math.max(300, speed - 150);
+            clearInterval(botSpawner);
+            botSpawner = setInterval(spawnBot, speed);
+          }
+
+          if (timeLeft <= 0) {
+            clearInterval(countdown);
+            clearInterval(botSpawner);
+            alert(`Game Over! Final Score: ${score}`);
+          }
+        }, 1000);
+      }
+
+      restartBtn.addEventListener('click', () => {
+        clearInterval(botSpawner);
+        clearInterval(countdown);
+        startGame();
+      });
+
+      startGame();
+    </script>
+  </section>
+
+  <!-- INFO PAGE -->
+  <section id="info">
+    <h2>Common Types of Scams</h2>
+    <ul>
+      <li><strong>OTP Scams:</strong> Asking for verification codes.</li>
+      <li><strong>Lottery Scams:</strong> Messages claiming prizes requiring payment.</li>
+      <li><strong>Fake Job Scams:</strong> High salary offers asking for registration fees.</li>
+      <li><strong>Tech Support Scams:</strong> Fake calls about hacked devices.</li>
+      <li><strong>Phishing Links:</strong> Fake websites stealing passwords.</li>
+    </ul>
+
+    <h2>Hero AI Abilities</h2>
+    <ul>
+      <li> Scan Mode: Detects suspicious messages.</li>
+      <li> Firewall Lift: Protects your data.</li>
+      <li> Identity Tracker: Finds cloned numbers.</li>
+      <li> Auto-Warning: Warns before risky clicks.</li>
+      <li>b Reprogram Beam: Converts bad bots to helpers.</li>
+    </ul>
+
+    <h2>Safety Steps</h2>
+    <ol>
+      <li>Never share OTPs or passwords.</li>
+      <li>Stay calm when receiving scary messages.</li>
+      <li>Check official sources before trusting messages.</li>
+      <li>Use strong passwords and 2-factor authentication.</li>
+      <li>Keep your phone and apps updated.</li>
+    </ol>
+
+    <h2>How to Report Scams</h2>
+    <ul>
+      <li>National Cybercrime Portal: cybercrime.gov.in</li>
+      <li>Helpline: 1930 (India)</li>
+      <li>Local Police: File complaints.</li>
+      <li>Bank Helplines for financial fraud.</li>
+    </ul>
+  </section>
 
 
 </body>
