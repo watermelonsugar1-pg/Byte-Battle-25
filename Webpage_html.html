@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ASTD</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: #f5f5f5;
+}
+
+header {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg,#3a1c71,#d76d77,#ffaf7b);
+}
+
+.section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h1, h2 { margin: 0 0 15px; }
+
+.section h2 { color: #ffaf7b; }
+</style>
+
+<body>
+
+<audio id="bgm" autoplay loop>
+  <source src="C:\Users\prana_ingi\Desktop\Byte-Battle-25\Sweet(chosic.com).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// 🔊 browsers block autoplay, so enable on first click
+document.addEventListener("click", () => {
+  const bgm = document.getElementById("bgm");
+  if (bgm.paused) bgm.play();
+});
+</script>
+<!-- end audio -->
+
+<header>
+  <h1>ASTD</h1>
+  <p>The GOAT of all AI games</p>
+</header>
+
+<div class="section">
+  <h2>About the Game</h2>
+  <p>A tiny hero AI battles corrupted scam-bots in a neon digital city, rescuing people from fake calls and messages. In the final boss fight, the hero shatters the giant Corrupted AI, exposes the humans running the scams on every screen, and reprograms all the bad bots into friendly guardians that warn everyone about future scams.</p>
+</div>
+<div class="section">
+  <h2>Screenshots</h2>
+
+  <div class="screenshots">
+    <img src="Gemini_Generated_Image_8k4lw68k4lw68k4l.webp">
+    <p>This is the bad AI robot boss</p>
+    <img src="content.webp">
+    <p>This is the good AI robot that fights the bad AI robots</p>
+  </div>
+</div>
+
+
+</body>
+</html>
