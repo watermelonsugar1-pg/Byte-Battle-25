@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-config/name="AI SAVES THE DAY(ASTD)"
-run/main_scene="uid://stqv76prhcea"
+config/name="New Game Project"
+run/main_scene="uid://bise4v7ehfhib"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+textures/canvas_textures/default_texture_filter=0
