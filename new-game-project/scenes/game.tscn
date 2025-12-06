@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://bise4v7ehfhib"]
+[gd_scene load_steps=10 format=3 uid="uid://bise4v7ehfhib"]
 
 [ext_resource type="PackedScene" uid="uid://byy3v3guuh7n6" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://bhryrccii2cee" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://cv7viqsfsgrrs" path="res://scenes/Screenshot 2025-12-06 at 3.52.31 PM.png" id="3_lnu2h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = -13.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnu2h"]
+size = Vector2(76, 33)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
+normal = Vector2(-1, 0)
+distance = -195.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
+normal = Vector2(1, 0)
+distance = -97.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -141,19 +153,38 @@ sources/1 = SubResource("TileSetAtlasSource_lnu2h")
 
 [node name="Game" type="Node2D"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1160.0
+offset_top = -928.0
+offset_right = 1200.0
+offset_bottom = 388.0
+texture = ExtResource("3_lnu2h")
+
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(1, -4)
+position = Vector2(1, 30)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-49, -49)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5, 84)
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="Standing on da water" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(153, 83.5)
+shape = SubResource("RectangleShape2D_lnu2h")
+
+[node name="U can\'t glitch thorugh me ahahaha" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_lnu2h")
+
+[node name="Same with me" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_lbhrr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 2)
 zoom = Vector2(4, 4)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(1, -1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_uwrxv")
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
+layer_0/tile_data = PackedInt32Array(262139, 1, 0, 262140, 1, 0, 262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 1, 196613, 262145, 10, 196614, 262145, 10, 262138, 1, 0, 196615, 262145, 10, 196616, 1, 1, 262137, 1, 0, 262136, 1, 0, 262135, 1, 0, 262152, 1, 1, 262151, 1, 1, 262150, 1, 1, 262149, 1, 1, 262148, 1, 1, 262147, 1, 1, 262146, 1, 1, 262145, 1, 1, 327679, 1, 1, 262144, 1, 1, 327678, 1, 1, 327676, 1, 1, 327677, 1, 1, 327675, 1, 1, 327674, 1, 1, 327673, 1, 1, 327671, 1, 1, 327672, 1, 1, 393207, 65537, 0, 393208, 65537, 0, 393209, 65537, 0, 393210, 65537, 0, 393211, 65537, 0, 393212, 65537, 0, 393213, 65537, 0, 393214, 65537, 0, 393215, 65537, 0, 327680, 65537, 0, 327681, 65537, 0, 327682, 65537, 0, 327683, 65537, 0, 327684, 65537, 0, 327685, 65537, 0, 327686, 65537, 0, 327687, 65537, 0, 327688, 65537, 0, -327671, 1, 1, -262135, 1, 1, -196599, 1, 1, -131063, 1, 1, -65527, 1, 1, 9, 1, 1, 65545, 1, 1, 131081, 1, 1, 196617, 1, 1, 262153, 1, 1, 327689, 1, 1, -262154, 1, 1, -196618, 1, 1, -131082, 1, 1, -65546, 1, 1, -10, 1, 1, 65526, 1, 1, 131062, 1, 1, 196598, 1, 1, 262134, 1, 1, 327670, 1, 1, 393206, 1, 1, 65541, 589825, 0, 65542, 655361, 0, 65543, 720897, 0, 65544, 1, 0, 65540, 1, 0, 131076, 1, 1, 131077, 262145, 9, 131078, 262145, 9, 131079, 262145, 9, 131080, 1, 1, -6, 131073, 4, 65530, 131073, 5, 131066, 131073, 6, -5, 196609, 4, 65531, 196609, 5, 131067, 196609, 6, 196603, 196609, 7, -4, 262145, 4, 65532, 262145, 5, 131068, 262145, 6, 196604, 65537, 6, -65539, 196609, 1, -131071, 196609, 1, -2, 589825, 2, -1, 655361, 2, -65536, 720897, 2, -131081, 655361, 2, -131080, 655361, 2, -131079, 655361, 2)
