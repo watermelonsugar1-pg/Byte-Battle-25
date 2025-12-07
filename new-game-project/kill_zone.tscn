@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://qpiur157tqvh"]
-
-[node name="kill zone" type="Area2D"]
-position = Vector2(796, 1555)
-collision_mask = 2
